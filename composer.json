@@ -1,0 +1,13 @@
+{
+    "name": "rotous/holidays-nl",
+    "description": "Package to find Dutch holiday dates",
+    "type": "library",
+    "license": "AGPL-3.0",
+    "authors": [
+        {
+            "name": "Ronald Toussaint",
+            "email": "ronaldtoussaint@gmail.com"
+        }
+    ],
+    "require": {}
+}
