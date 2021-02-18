@@ -9,5 +9,10 @@
             "email": "ronaldtoussaint@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+	"autoload": {
+        "psr-4": {
+			"rotous\\holidays\\": "src/"
+		}
+    }
 }
