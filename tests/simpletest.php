@@ -4,9 +4,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 // Yes, I know...we need some real unit tests, but for now this will do :-p
 
-function getHolidays() {
-	require __DIR__ . '/national-holidays.php';
-}
 $holidays = require __DIR__ . '/national-holidays.php';
 
 // current year
