@@ -171,3 +171,5 @@ object(DateTime)#4 (3) {
 }
 */
 ````
+
+The complete api documentation can be found at https://rotous.github.io/holidaysNL/
