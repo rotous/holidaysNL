@@ -28,5 +28,11 @@
 		"Christmas",
 		"Queens Day",
 		"Kings Day"
-	]
+	],
+    "require-dev": {
+        "sami/sami": "^4.1"
+    },
+	"scripts": {
+		"gen-doc": "php vendor/sami/sami/sami.php update tools/sami/sami.config.php"
+	}
 }

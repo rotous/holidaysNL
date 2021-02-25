@@ -1,0 +1,220 @@
+{% extends "default/class.twig" %}
+{% from "macros.twig" import render_classes, breadcrumbs, namespace_link, class_link, property_link, method_link, hint_link, source_link, method_source_link, deprecated, deprecations, todo, todos %}
+
+{% import _self as mymacros %}
+
+{% block page_content %}
+
+    <div class="page-header">
+        <h1>
+            {{ class.name|split('\\')|last|raw }}
+            {{ deprecated(class) }}
+        </h1>
+
+        <p>{{ block('class_signature') }}</p>
+    </div>
+
+    {{ deprecations(class) }}
+
+    {{ block('class_nav') }}
+
+    <div class="scroll-box">
+
+        {% if class.shortdesc or class.longdesc %}
+            <div class="description">
+                {% if class.shortdesc -%}
+                    <p>{{ class.shortdesc|desc(class) }}</p>
+                {%- endif %}
+                {% if class.longdesc -%}
+                    <p>{{ class.longdesc|desc(class) }}</p>
+                {%- endif %}
+                {% if project.config('insert_todos') == true %}
+                    {{ todos(class) }}
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if traits %}
+            <h2>Traits</h2>
+
+            {{ render_classes(traits) }}
+        {% endif %}
+
+        {% if constants %}
+            <h2>Constants</h2>
+
+            {{ block('constants') }}
+        {% endif %}
+
+        {% if properties %}
+            <h2>Properties</h2>
+
+            {{ block('properties') }}
+        {% endif %}
+
+        {% if methods %}
+            {#<h2>Methods</h2>
+
+            {{ block('methods') }}#}
+
+            <h2>Method Details</h2>
+
+            {{ block('methods_details') }}
+        {% endif %}
+
+    </div><!-- .scroll-box -->
+
+{% endblock %}
+
+{% block class_nav %}
+    <ul class="class-navigation">
+        {{ mymacros.class_nav_item(properties, 'properties', 'property') }}
+        {{ mymacros.class_nav_item(methods, 'methods', 'method') }}
+    </ul>
+{% endblock class_nav %}
+
+{% block properties %}
+    {{ mymacros.class_parts('properties', properties, class) }}
+    {#
+    <div class="pd-prop-block-container">
+        {% for property in properties %}
+            <div class="pd-prop-block" id="property_{{ property.name|raw }}">
+                <div class="pd-prop-block-labels">
+                </div>
+                <div class="pd-prop-block-name">
+                    {{ mymacros.visibility_labels(property) }}
+                    <strong>{{ property.name }}</strong>
+                    {% if property.hint %}: {{ hint_link(property.hint) }}{% endif %}
+                </div>
+                <div class="pd-prop-block-desc">
+                    {{ property.longdesc|desc(class) }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {#
+    <table class="table table-condensed">
+        {% for property in properties %}
+            <tr>
+                <td class="type" id="property_{{ property.name|raw }}">
+                    {% if property.static %}static{% endif %}
+                    {% if property.protected %}protected{% endif %}
+                    {% if property.private %}private{% endif %}
+                    {{ hint_link(property.hint) }}
+                </td>
+                <td>${{ property.name|raw }}</td>
+                <td class="last">{{ property.shortdesc|desc(class) }}</td>
+                <td>
+                    {%- if property.class is not same as(class) -%}
+                        <small>from&nbsp;{{ property_link(property, false, true) }}</small>
+                    {%- endif -%}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    #}
+{% endblock %}
+
+{% block methods_details %}
+    {{ mymacros.class_parts('methods', methods, class) }}
+{#
+    <div class="pd-method-block-container">
+        {% for method in methods %}
+            <div class="pd-prop-block"  id="method_{{ method.name|raw }}">
+                <div class="pd-prop-block-labels">
+                </div>
+                <div class="pd-prop-block-name">
+                    {{ mymacros.visibility_labels(method) }}
+                    <strong>{{ method.name }}</strong>
+                    {% if method.hint %}: {{ hint_link(method.hint) }}{% endif %}
+                </div>
+                <div class="pd-prop-block-desc">
+                    {% if method.shortdesc %}
+                        {{ method.shortdesc|desc(class) }}
+                    {% endif %}
+                    {% if method.longdesc %}
+                        {{ method.longdesc|desc(class) }}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+#}
+{% endblock methods_details %}
+
+
+
+{####################################################################################}
+{#                                   macros                                         #}
+{####################################################################################}
+
+{% macro visibility_labels(item) %}
+    {% if item.static %}<span class="label label-primary">static</span>{% endif %}
+    {% if item.public %}<span class="label label-success">public</span>{% endif %}
+    {% if item.private %}<span class="label label-danger">private</span>{% endif %}
+    {% if item.protected %}<span class="label label-warning">protected</span>{% endif %}
+{% endmacro %}
+
+{% macro class_nav_item(hash, name, targetname) %}
+    {% import _self as mymacros %}
+    <li class="class-navigation-menu-header">
+        <span class="class-nav-item">{{ name }} <sup>{{ (hash and hash|length>0) ? hash|length : 0 }}</sup></span>
+        {% if hash|length > 0 %}
+            <ul class="class-nav-submenu">
+                {% for subitem in hash %}
+                    <li>
+                        {{ mymacros.visibility_labels(subitem) }}
+                        &nbsp;
+                        <a href="#{{ name }}_{{ subitem.name|raw }}">{{ subitem.name|raw }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}
+
+{% macro class_parts(typename, parts, class) %}
+    {% from "macros.twig" import method_link, method_source_link, hint_link, abbr_class, method_parameters_signature %}
+    {% import _self as mymacros %}
+    <div class="pd-{{ typename }}-block-container">
+        {% for part in parts %}
+            <div class="pd-prop-block"  id="{{ typename }}_{{ part.name|raw }}">
+                {% if typename=='methods' %}
+                    <div class="location">
+                        {% if part.class is not same as(class) %}
+                            {{ method_link(part, false, true) }}
+                        {% else %}
+                            {{ abbr_class(class) }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+                <div class="pd-prop-block-name">
+                    {% if part.deprecated %}
+                        <span class="label label-danger">deprecated</span>
+                    {% endif %}
+                    {% if part.final %}
+                        <span class="label label-info">final</span>
+                    {% endif %}
+                    {{ mymacros.visibility_labels(part) }}
+                    <strong>{{ part.name }}</strong>
+                    {% if typename=='methods' %}
+                        {{ method_parameters_signature(part) }}
+                    {% endif %}
+                    {% if part.hint %}: {{ hint_link(part.hint) }}{% endif %}
+                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                        {% if part.shortdesc %}
+                            {{ part.shortdesc }}
+                        {% endif %}
+                    </span>
+                    <span class="class-part-longdesc">
+                        {% if part.longdesc %}
+                            {{ part.longdesc }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

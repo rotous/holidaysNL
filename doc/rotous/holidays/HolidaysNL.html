@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>rotous\holidays\HolidaysNL | HolidayNL PHP api Documentation</title>
+
+                <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../css/phpduck.css" />
+
+    
+    </head>
+
+    <body id="class" data-name="class:rotous_holidays_HolidaysNL" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+    <div id="drag-handle" draggable="true"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">HolidayNL PHP api Documentation</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../rotous.html">rotous</a></li><li class="backslash">\</li><li><a href="../../rotous/holidays.html">holidays</a></li><li class="backslash">\</li><li>HolidaysNL</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            HolidaysNL
+                
+        </h1>
+
+        <p>    class
+    <strong>HolidaysNL</strong>
+</p>
+    </div>
+
+        
+    
+
+        <ul class="class-navigation">
+                <li class="class-navigation-menu-header">
+        <span class="class-nav-item">properties <sup>2</sup></span>
+                    <ul class="class-nav-submenu">
+                                    <li>
+                                    <span class="label label-danger">private</span>    
+                        &nbsp;
+                        <a href="#properties__timeZone">_timeZone</a>
+                    </li>
+                                    <li>
+                                    <span class="label label-danger">private</span>    
+                        &nbsp;
+                        <a href="#properties__year">_year</a>
+                    </li>
+                            </ul>
+            </li>
+
+                <li class="class-navigation-menu-header">
+        <span class="class-nav-item">methods <sup>27</sup></span>
+                    <ul class="class-nav-submenu">
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods___construct">__construct</a>
+                    </li>
+                                    <li>
+                                    <span class="label label-danger">private</span>    
+                        &nbsp;
+                        <a href="#methods__getCurrentYear">_getCurrentYear</a>
+                    </li>
+                                    <li>
+                                    <span class="label label-danger">private</span>    
+                        &nbsp;
+                        <a href="#methods__validateYear">_validateYear</a>
+                    </li>
+                                    <li>
+                                    <span class="label label-danger">private</span>    
+                        &nbsp;
+                        <a href="#methods__validateYearForKingOrQueensDay">_validateYearForKingOrQueensDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_setYear">setYear</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getNewYearDateTime">getNewYearDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getNewYear">getNewYear</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getEasterDateTime">getEasterDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getEaster">getEaster</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondEasterDayDateTime">getSecondEasterDayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondEasterDay">getSecondEasterDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getAscensionDayDateTime">getAscensionDayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getAscensionDay">getAscensionDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getPentecostDateTime">getPentecostDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getPentecost">getPentecost</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondPentecostDayDateTime">getSecondPentecostDayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondPentecostDay">getSecondPentecostDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getChristmasDateTime">getChristmasDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getChristmas">getChristmas</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondChristmasDayDateTime">getSecondChristmasDayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getSecondChristmasDay">getSecondChristmasDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getKingOrQueensDayDateTime">getKingOrQueensDayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getKingOrQueensDay">getKingOrQueensDay</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getHolidaysDateTime">getHolidaysDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_getHolidays">getHolidays</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_isHolidayDateTime">isHolidayDateTime</a>
+                    </li>
+                                    <li>
+                                <span class="label label-success">public</span>        
+                        &nbsp;
+                        <a href="#methods_isHoliday">isHoliday</a>
+                    </li>
+                            </ul>
+            </li>
+
+    </ul>
+
+
+    <div class="scroll-box">
+
+        
+        
+        
+                    <h2>Properties</h2>
+
+                            <div class="pd-properties-block-container">
+                    <div class="pd-prop-block"  id="properties__timeZone">
+                                <div class="pd-prop-block-name">
+                                                                        <span class="label label-danger">private</span>    
+                    <strong>_timeZone</strong>
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="properties__year">
+                                <div class="pd-prop-block-name">
+                                                                        <span class="label label-danger">private</span>    
+                    <strong>_year</strong>
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+            </div>
+
+    
+        
+                    
+            <h2>Method Details</h2>
+
+                            <div class="pd-methods-block-container">
+                    <div class="pd-prop-block"  id="methods___construct">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>__construct</strong>
+                                            (int|null $year = null)
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Constructor
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods__getCurrentYear">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                        <span class="label label-danger">private</span>    
+                    <strong>_getCurrentYear</strong>
+                                            ()
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns the current year as integer
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods__validateYear">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                        <span class="label label-danger">private</span>    
+                    <strong>_validateYear</strong>
+                                            (int $year, int $min = 0, int $max = 3000)
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Check if a valid year was given. Should be between 0 and 3000!
+Very arbitrarily use the year 3000 as last possible date
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods__validateYearForKingOrQueensDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                        <span class="label label-danger">private</span>    
+                    <strong>_validateYearForKingOrQueensDay</strong>
+                                            (int $year)
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Check if a valid year was given. Should be between 1891 and 3000!
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_setYear">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>setYear</strong>
+                                            (int|null $year = null)
+                                                        </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Setter for the year property
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getNewYearDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getNewYearDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns the new years date (easy one to begin with :-)) as DateTime object.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    If no year is given or null is given, the current year will be used.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getNewYear">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getNewYear</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns the new years date (easy one to begin with :-))
+If no year is given or null is given, the current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getEasterDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getEasterDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Easter date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getEaster">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getEaster</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Easter date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondEasterDayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondEasterDayDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Easter Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondEasterDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondEasterDay</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Easter Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getAscensionDayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getAscensionDayDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Ascension date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getAscensionDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getAscensionDay</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Ascension date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getPentecostDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getPentecostDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Pentecost date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getPentecost">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getPentecost</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Pentecost date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondPentecostDayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondPentecostDayDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Pentecost Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondPentecostDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondPentecostDay</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Pentecost Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getChristmasDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getChristmasDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Christmas date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getChristmas">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getChristmas</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Christmas date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondChristmasDayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondChristmasDayDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Christmas Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getSecondChristmasDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getSecondChristmasDay</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Second Christmas Day date for the given year. If no year is given or null is given, the
+current year will be used.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getKingOrQueensDayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getKingOrQueensDayDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Queens Day or Kings Day date for the given year.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    If no year is given or null is given, the current year will be used.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getKingOrQueensDay">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getKingOrQueensDay</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns Queens Day or Kings date for the given year.
+                                            </span>
+                    <span class="class-part-longdesc">
+                                                    If no year is given or null is given, the current year will be used.
+Format is dd-mm-yyyy.
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getHolidaysDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getHolidaysDateTime</strong>
+                                            (int|null $year = null)
+                                        : <a target="_blank" href="http://php.net/DateTime">DateTime</a>[]                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns all holidays for the given year as an array of \DateTime objects
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_getHolidays">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>getHolidays</strong>
+                                            (int|null $year = null, bool $excludeYear = false)
+                                        : string[]                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Returns all holidays for the given year as an array of strings with
+the format dd-mm-yyyy
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_isHolidayDateTime">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>isHolidayDateTime</strong>
+                                            (<a target="_blank" href="http://php.net/DateTime">DateTime</a>|null $date = null)
+                                        : bool                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Checks if a date specified by the given \DateTime object is a holiday
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+                    <div class="pd-prop-block"  id="methods_isHoliday">
+                                    <div class="location">
+                                                    <abbr title="rotous\holidays\HolidaysNL">HolidaysNL</abbr>
+                                            </div>
+                                <div class="pd-prop-block-name">
+                                                                    <span class="label label-success">public</span>        
+                    <strong>isHoliday</strong>
+                                            (string|null $date = null)
+                                        : bool                </div>
+                <div class="pd-prop-block-desc">
+                    <span class="class-part-shortdesc">
+                                                    Checks if a date specified by the given \DateTime object is a holiday
+                                            </span>
+                    <span class="class-part-longdesc">
+                                            </span>
+                </div>
+            </div>
+            </div>
+
+
+        
+    </div><!-- .scroll-box -->
+
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+        <script type="text/javascript" src="../../js/phpduck.js" ></script>
+    </body>
+
+</html>
