@@ -17,7 +17,7 @@ $sami = new Sami\Sami($projectDir . 'src', array(
     'template_dirs' => array($samiDir . 'sami-themes/phpduck'),
     'theme'         => 'phpduck',
     'title'         => 'HolidayNL PHP api Documentation',
-    'build_dir'     => $projectDir . 'doc',
+    'build_dir'     => $projectDir . 'docs',
 	'cache_dir'     => $samiDir . '.sami-cache',
 ));
 
